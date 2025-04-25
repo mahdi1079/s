@@ -50,7 +50,10 @@ while($row)
     <h5 class="card-title"><?php echo($row["name"]);?></h5>
     <p class="card-text"><?php echo($row["ghymat"]);?></p>
     <a href="<?php echo($row["idd"]);?>?id=<?php echo($row["id"]); ?>" class="btn btn-primary">خرید</a>
-    
+    <button><a href="edit.php?id=<?php echo($row["id"]); ?>">*</a></button>
+    <button><a href="delete.php?id=<?php echo($row["id"]); ?>">-</a></button>
+    <button><a href="new11.php?id=<?php echo($row["id"]); ?>">ویرایش کردن فولدر</a></button>
+    <button><a href="new10.php?id=<?php echo($row["id"]); ?>">اضافه کردن فولدر</a></button>
   </div>
 </div>
 

@@ -1,26 +1,19 @@
-
 <?php
-include("tag_a.php");
+include("header.php");
+?> 
+<?php
+$email=$_POST["email"];
+$password=$_POST["password"];
+$c=mysqli_connect("localhost","root","","gym");
+$result=mysqli_query($c,"SELECT * FROM `user` WHERE 'email'='$email'and'password'='$password'");
+mysqli_close($c);
+$row=mysqli_fetch_array($result);
+if($row){
+    echo("وارد شدید");
+}else{
+    echo("...دقت کنید");
+}
 ?>
-
 <?php
-    $username=$_POST["username"];
-    $password=$_POST["passw"];
-    $c=mysqli_connect("localhost","root","","amir");
-    $result=mysqli_query($c," SELECT * FROM `carpet` WHERE 
-    `username` = '$username' AND `password` = '$password';");
-    $row=mysqli_fetch_array($result);
-    mysqli_close($c);
-    if ($row) {
-        header("Location: header3.php?msg=success");
-        $_SESSION["login"] = true;
-        $_SESSION["admin"]=$row["admin"];
-    } else {
-        header("Location: header3.php?msg=error");
-    }
-    exit();
-?>
-
-<?php
-include("footer2.html");
+include("footer.html");
 ?>
